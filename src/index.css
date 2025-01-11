@@ -499,9 +499,10 @@ hr {
   font-weight: 800;
   color: #072635;
 }
-#birth-icon, #gender-icon, #insurance-icon, .phone-icon {
+#birth-icon, #female-icon, #male-icon, #insurance-icon, .phone-icon {
   margin: 0 1.5rem;
-  /* width: 4.2; */
+  max-width: 7rem;
+  width: 4.3rem;
   /* border: 1px solid red; */
 }
 #show-info {
