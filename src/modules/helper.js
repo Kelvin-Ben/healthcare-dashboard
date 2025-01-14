@@ -5,7 +5,7 @@ const patientsList = document.querySelector(".patient-list");
 patientsList.innerHTML = "";
 
 export function handleLinkClicks() {
-  const links = document.querySelectorAll(".details a");
+  const links = document.querySelectorAll(".nav a");
 
   links.forEach((link) => {
     link.addEventListener("click", function () {
@@ -45,31 +45,35 @@ export const renderPatientList = (data) => {
       <li class="patients-info" key="${index}">
         <div class="patients-info__details">
           <img src="${profile_picture}" alt="Profile picture of ${profile_picture}" class="patients-img">
+          <div id="patients-details">
           <div>
             <p class="patients-name">${name}</p>
-            <p class="patients-details">
+            <p class="patients-inner_details">
               <span class="patients-gender">${gender}, </span>
               <span class="patients-age">${age}</span>
             </p>
           </div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="3.714" class="three-dots viewBox="0 0 18 3.714">
+            <path id="more_horiz_FILL0_wght300_GRAD0_opsz24" d="M191.09-536.285a1.788,1.788,0,0,1-1.312-.546,1.788,1.788,0,0,1-.546-1.312,1.788,1.788,0,0,1,.546-1.312A1.788,1.788,0,0,1,191.09-540a1.788,1.788,0,0,1,1.312.546,1.788,1.788,0,0,1,.546,1.312,1.788,1.788,0,0,1-.546,1.312A1.788,1.788,0,0,1,191.09-536.285Zm7.143,0a1.788,1.788,0,0,1-1.312-.546,1.788,1.788,0,0,1-.546-1.312,1.788,1.788,0,0,1,.546-1.312,1.788,1.788,0,0,1,1.312-.546,1.788,1.788,0,0,1,1.312.546,1.788,1.788,0,0,1,.546,1.312,1.788,1.788,0,0,1-.546,1.312A1.788,1.788,0,0,1,198.233-536.285Zm7.143,0a1.788,1.788,0,0,1-1.312-.546,1.788,1.788,0,0,1-.546-1.312,1.788,1.788,0,0,1,.546-1.312,1.788,1.788,0,0,1,1.312-.546,1.788,1.788,0,0,1,1.312.546,1.788,1.788,0,0,1,.546,1.312,1.788,1.788,0,0,1-.546,1.312,1.788,1.788,0,0,1-1.312.546Z" transform="translate(-189.233 539.999)" fill="#072635"/>
+          </svg>
+          </div>
         </div>
-        <img src="./more_horiz_FILL0_wght300_GRAD0_opsz24.svg" alt="" class="three-dots-img">
       </li>
     `;
     patientsList.insertAdjacentHTML("beforeend", patientItem);
   });
-  const allPatients = document.querySelectorAll('.patients-info');
-  allPatients.forEach((patient) => {
-    patient.addEventListener('click', function () {
-      allPatients.forEach((patient) => {
-        patient.classList.remove('active-patient');
-        this.classList.add('active-patient')
-        console.log(this)
-      })
-    })
-  })
-};
 
+  const allPatients = document.querySelectorAll(".patients-info");
+  allPatients.forEach((patient) => {
+    patient.addEventListener("click", function () {
+      allPatients.forEach((patient) => {
+        patient.classList.remove("active-patient");
+        this.classList.add("active-patient");
+        console.log(this);
+      });
+    });
+  });
+};
 
 // Helper function to calculate average and determine
 const calculateLevel = (value, type) => {
@@ -125,7 +129,8 @@ export const updateInfoSections = (filteredHistory) => {
   document.querySelector(".systolic .value").textContent = systolicAvg;
   document.querySelector(".systolic .level").textContent = systolicLevel.level;
   document.querySelector(".diastolic .value").textContent = diastolicAvg;
-  document.querySelector(".diastolic .level").textContent = diastolicLevel.level;
+  document.querySelector(".diastolic .level").textContent =
+    diastolicLevel.level;
 
   // update respiratory rate
   const respRateAvg = Math.round(

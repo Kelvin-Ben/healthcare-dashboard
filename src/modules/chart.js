@@ -86,7 +86,7 @@ export const renderChart = (data) => {
     });
     updateInfoSections(filteredHistory);
   };
-  
+
   // render the inital chart for 6 months
   const initialMonths = 6;
   createChart(data[0], initialMonths);

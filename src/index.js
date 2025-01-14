@@ -1,9 +1,14 @@
 import { renderUI } from "./modules/ui";
 import { renderChart } from "./modules/chart";
 import { fetchData } from "./modules/api";
-import { handleLinkClicks, searchPatient, toggleSpinner, renderPatientList } from "./modules/helper";
+import {
+  handleLinkClicks,
+  searchPatient,
+  toggleSpinner,
+  renderPatientList,
+} from "./modules/helper";
 
-const container = document.querySelector('.container');
+const container = document.querySelector(".container");
 const LOADING_DELAY = 1000;
 
 // attach window to searchPatient function
@@ -71,7 +76,8 @@ const initializeApp = async () => {
     handleClickedPatient(data);
   } catch (error) {
     console.error("Failed to initialize the app:", error);
-    container.innerHTML = "<p class='failed'>Failed to load data. Please try again later!</p>"
+    container.innerHTML =
+      "<p class='failed'>Failed to load data. Please try again later!</p>";
   }
 };
 handleLinkClicks();
