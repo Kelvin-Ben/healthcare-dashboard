@@ -60,11 +60,11 @@
       <header id="search">
         <h2 id="patients-heading">Patients</h2>
         <div id="search-wrapper">
-          <lable for="search-patient" class="visually-hidden">Search patients</lable>
-          <input type="text" id="search-patient" name="patient" aria-label="Search patients" />
-          <button aria-label="Search" class="search-btn">
+          <!-- <lable for="search-patient" class="visually-hidden">Search patients</lable> -->
+          <input type="search" id="search-patient" name="patient" aria-label="Search patients" placeholder="Type here to filter patients" oninput="searchPatient(event)" />
+          <!-- <button aria-label="Search" class="search-btn">
             <img src="../images/search_FILL0_wght300_GRAD0_opsz24.svg" id="search-icon" alt="Search Icon" />
-          </button>
+          </button> -->
         </div>
       </header>
       <div id="patient-list-wrapper">
