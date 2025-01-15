@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./index.css" />
+    <script type="module" src="./index.js"></script>
+    <title>HeathCare Dashboard</title>
+  </head>
+  <body>
+    <header id="header" role="banner">
+      <a href="#" rel="noopener noreferrer" aria-label="TechCare logo">
+        <img
+          src="../images/TestLogo.svg"
+          alt="HealthCare Dashboard Logo"
+          class="techCare-logo"
+        />
+      </a>
+      <nav class="nav">
+        <a
+          href="#"
+          rel="noopener noreferrer"
+          aria-label="Overview"
+          class="overview"
+        >
+          <img
+            src="../images/home_FILL0_wght300_GRAD0_opsz24.svg"
+            alt="Home Icon"
+          />
+          <span>Overview</span>
+        </a>
+        <a
+          href="#"
+          rel="noopener noreferrer"
+          aria-label="Patients"
+          class="patients"
+        >
+          <img
+            src="../images/group_FILL0_wght300_GRAD0_opsz24.svg"
+            alt="Group Icon"
+          />
+          <span>Patients</span>
+        </a>
+        <a
+          href="#"
+          rel="noopener noreferrer"
+          aria-label="Schedule"
+          class="schedule"
+        >
+          <img
+            src="../images/calendar_today_FILL0_wght300_GRAD0_opsz24.svg"
+            alt="Calendar Icon"
+          />
+          <span>Schedule</span>
+        </a>
+        <a
+          href="#"
+          rel="noopener noreferrer"
+          aria-label="Message"
+          class="message"
+        >
+          <img
+            src="../images/chat_bubble_FILL0_wght300_GRAD0_opsz24.svg"
+            alt="Chat Icon"
+          />
+          <span>Message</span>
+        </a>
+        <a
+          href="#"
+          rel="noopener noreferrer"
+          aria-label="Transation"
+          class="transactions"
+        >
+          <img
+            src="../images/credit_card_FILL0_wght300_GRAD0_opsz24.svg"
+            alt="Credit card Icon"
+          />
+          <span>Transactions</span>
+        </a>
+      </nav>
+      <div class="profile-section">
+        <div class="profile">
+          <img
+            src="../images/senior-woman-doctor-and-portrait-smile-for-health-2023-11-27-05-18-16-utc.png"
+            alt="Dr. Jose Simmons, General Practitioner"
+          />
+          <div>
+            <h1 class="title">Dr. Jose Simmons</h1>
+            <p class="specialization">General Practitioner</p>
+          </div>
+        </div>
+        <span class="vertical-line">&nbsp;</span>
+        <div class="setting">
+          <img
+            src="../images/settings_FILL0_wght300_GRAD0_opsz24.svg"
+            alt="Gear Icon"
+            class="gear"
+          />
+          <img
+            src="../images/more_vert.svg"
+            alt="Three Verical dots"
+            class="dots"
+          />
+        </div>
+      </div>
+    </header>
+    <main class="container">
+      <section id="patients" aria-labelledby="patients-heading">
+        <header id="search">
+          <h2 id="patients-heading">Patients</h2>
+          <input
+            type="search"
+            id="search-patient"
+            name="patient"
+            aria-label="Search patients"
+            placeholder="Type here to filter patients"
+            oninput="searchPatient(event)"
+          />
+        </header>
+        <div id="patient-list-wrapper">
+          <ul class="patient-list"></ul>
+        </div>
+      </section>
+      <section id="patient-history">
+        <article id="diagnosis-history">
+          <h2 id="history-heading">Diagnosis History</h2>
+          <div id="chart">
+            <div class="analysis">
+              <div class="duration">
+                <h2>Blood Pressure</h2>
+                <select name="" id="month-range">
+                  <option value="6">Last 6 months</option>
+                  <option value="12">Last 12 months</option>
+                  <option value="24">Last 24 months</option>
+                </select>
+              </div>
+              <canvas
+                id="blood-pressure-chart"
+                width="300"
+                height="200"
+              ></canvas>
+            </div>
+            <div class="more-info">
+              <div class="systolic">
+                <p class="systolic-details">
+                  <span id="systo-bull">&nbsp;</span>
+                  Systolic
+                </p>
+                <p class="value"></p>
+                <p class="level"></p>
+              </div>
+              <hr />
+              <div class="diastolic">
+                <p class="diastolic-details">
+                  <span id="diasto-bull">&nbsp;</span>
+                  Diastolic
+                </p>
+                <p class="value"></p>
+                <p class="level"></p>
+              </div>
+            </div>
+          </div>
+          <div id="diagnosis">
+            <div id="resp-info">
+              <div class="respiratory-rate">
+                <img src="../images/respiratory rate.svg" alt="Lungs Icon" />
+                <h3 id="resp-heading">Respiratory Rate</h3>
+                <h3 class="bpm"></h3>
+                <p class="level"></p>
+              </div>
+            </div>
+            <div id="temp-info">
+              <div class="temperature">
+                <img src="../images/temperature.svg" alt="Thermometer Icon" />
+                <h3 id="temp-heading">Temperature</h3>
+                <h3 id="fahrenheit"></h3>
+                <p class="level"></p>
+              </div>
+            </div>
+            <div id="heart-info">
+              <div class="heart-rate">
+                <img src="../images/HeartBPM.svg" alt="Heart Icon" />
+                <h3 id="heart-heading">Heart Rate</h3>
+                <h3 class="bpm"></h3>
+                <p class="level"></p>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article id="diagnostic-list">
+          <h2 id="history-heading">Diagnostic List</h2>
+          <div id="diagnostic-header">
+            <h3 class="problems">Problems/Diagnosis</h3>
+            <h3 class="description">Description</h3>
+            <h3 class="status">Status</h3>
+          </div>
+          <ul id="list"></ul>
+        </article>
+      </section>
+      <section id="patient-profile">
+        <div class="more-details">
+          <div></div>
+          <a href="#" id="show-info">Show All Information</a>
+        </div>
+        <div id="lab-results">
+          <p class="results">Lab Results</p>
+          <ul id="tests-wrapper"></ul>
+        </div>
+      </section>
+      <div id="loading-spinner" class="spinner">
+        <div class="spinner-icon"></div>
+        <p>Please wait...</p>
+      </div>
+    </main>
+  </body>
+</html>
