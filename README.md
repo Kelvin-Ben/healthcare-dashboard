@@ -2,6 +2,8 @@
 
 A healthcare dashboard application developed as a test project. The application fetches and displays patient data, focusing on a single patient's specific details as per the requirements. However, the completed application supports fetching and displaying data for all patients.
 
+![dashboard](https://github.com/user-attachments/assets/32d6375e-c037-447d-8029-3b59d218f5ec)
+
 ## Features
 
 - Fetches and displays patient-specific data.
