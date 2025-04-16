@@ -69,7 +69,6 @@ export const renderPatientList = (data) => {
       allPatients.forEach((patient) => {
         patient.classList.remove("active-patient");
         this.classList.add("active-patient");
-        console.log(this);
       });
     });
   });

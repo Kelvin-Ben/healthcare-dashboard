@@ -5,8 +5,8 @@ require("dotenv").config({
 });
 
 export const fetchData = async () => {
-  const userName = process.env.API_USERNAME;
-  const password = process.env.API_PASSWORD;
+  const userName = 'coalition';
+  const password = 'skills-test';
   const auth = Buffer.from(`${userName}:${password}`).toString("base64");
 
   const url = "https://fedskillstest.coalitiontechnologies.workers.dev";
