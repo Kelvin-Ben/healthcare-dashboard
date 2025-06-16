@@ -31,3 +31,5 @@ A healthcare dashboard application developed as a test project. The application 
 - For a production build, run:
   _npm run build_
   note:- The output files will be generated in the dist/ folder.
+
+### The password and key are available on request due to security risks!
